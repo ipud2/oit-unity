@@ -4,8 +4,6 @@
 
 ---
 
-TODO: rewrite intro
-
 ![Animation](https://user-images.githubusercontent.com/18415215/139123916-2dce99a6-aefe-437a-9caf-cb105015e654.gif)
 ![Animation2](https://user-images.githubusercontent.com/18415215/139123918-600efbe8-96ab-475e-be68-51e2e026d434.gif)
 
@@ -13,29 +11,17 @@ Both animations show three stacked transparent cubes. The first one with this im
 
 ## Description
 
-TODO: revise description
-
 This is an implementation of order-independent transparency in Unity's **Built-In Pipeline**. It uses Per-Pixel Linked Lists, implemented with RWStructuredBuffers.
 This is a feature requiring Shader Model 5.0 with ComputeBuffers, see the [Unity Manual](https://docs.unity3d.com/Manual/SL-ShaderCompileTargets.html) for supported platforms.
 For reference a [presentation by Holger Gruen and Nicolas Thibieroz](https://de.slideshare.net/hgruen/oit-and-indirect-illumination-using-dx11-linked-lists)
 was used. The code is based on their suggestions.
-
-## Modes
-
-### MLAB
-
-TODO
-
-### Per-Pixel Linked Lists
-
-TODO
 
 ## Usage
 
 I recommend using this with the package Post-Processing Stack v2, because then transparent objects will be rendered in Scene View as well. Follow these steps:
 
 1. Add the post-processing override `Order Independent Transparency` to a post-processing volume in your scene.
-2. Change the shaders of every object that shall be rendered with order-independent transparency. They have to have a material using a custom shader. Two sample shaders that you can use are included in this project `OrderIndependentTransparency/Unlit` and `OrderIndependentTransparency/Standard`.
+2. Change the shaders of every object that shall be rendered with order-independent transparency. They have to have a material using a custom shader. Two sample shaders that you can use are included in this project `OrderIndependentTransparency/Unlit` and `OrderIndependentTransparency/Standard` (standard shader has to be set to Rendering Mode Transparent).
 3. Run your scene.
 
 ### Without Post-Processing Stack v2
